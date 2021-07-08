@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,8 +23,10 @@ import lombok.NoArgsConstructor;
 public class UserModel {
   @Id
   @GeneratedValue(strategy=GenerationType.AUTO)
-  private Integer id;  
+  private Integer id;
+  @NotEmpty(message = "name cannot be empty")  
   private String name;
   @Email(message = "Seu e-mail nao é valido, por favor digite um e-mail valido")
+  @NotEmpty(message = "email cannot be empty")
   private String email;  
 }
