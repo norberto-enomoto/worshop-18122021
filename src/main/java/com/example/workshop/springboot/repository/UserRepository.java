@@ -1,7 +1,5 @@
 package com.example.workshop.springboot.repository;
 
-import java.util.List;
-
 import com.example.workshop.springboot.model.UserModel;
 
 import org.springframework.data.repository.CrudRepository;
