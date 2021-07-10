@@ -14,7 +14,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity // This tells Hibernate to make a table out of this class
-@Table(name = "user_application")
+@Table(name = "tb_user")
 @Data
 @Builder
 @AllArgsConstructor
@@ -24,9 +24,9 @@ public class UserModel {
   @Id
   @GeneratedValue(strategy=GenerationType.AUTO)
   private Integer id;
-  @NotEmpty(message = "name cannot be empty")  
+  @NotEmpty(message = "Nome não pode ser vazio")  
   private String name;
   @Email(message = "Seu e-mail nao é valido, por favor digite um e-mail valido")
-  @NotEmpty(message = "email cannot be empty")
+  @NotEmpty(message = "Nome não pode ser vazio")
   private String email;  
 }

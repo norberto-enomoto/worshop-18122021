@@ -1,5 +1,7 @@
 package com.example.workshop.springboot.service;
 
+import java.util.List;
+
 import com.example.workshop.springboot.model.UserModel;
 import com.example.workshop.springboot.repository.UserRepository;
 
@@ -21,21 +23,21 @@ public class UserService {
   }
 
   public Iterable<UserModel> getUsers() {
-    log.info("Getting all users");
+    log.info("Recuperando todos users");
     return userRepository.findAll();
   }
 
   public UserModel getUser(Integer id) {
-    log.info("Getting user by id {}", id);
+    log.info("Recuperando user pelo id {}", id);
     return userRepository.findById(id).orElseThrow(() -> {
-      return new RuntimeException(String.format("User=[%s] was not found", id));
+      return new RuntimeException(String.format("User=[%s] não foi encontrado", id));
     });
   }
 
   public UserModel delete(Integer id) {
-    log.info("Deleting user by id {}", id);
+    log.info("Apagando user pelo id {}", id);
     UserModel user = userRepository.findById(id).orElseThrow(() -> {
-      return new RuntimeException(String.format("User=[%s] was not found", id));
+      return new RuntimeException(String.format("User=[%s] não foi encontrado", id));
     });
     userRepository.deleteById(id);
     return user;
@@ -43,14 +45,14 @@ public class UserService {
 
   public UserModel createUser(String name, String email) {
     UserModel user = UserModel.builder().name(name).email(email).build();
-    log.info("Creating {}", user);
+    log.info("Criando {}", user);
     return userRepository.save(user);
   }
 
   public UserModel updateUser(Integer id, String name, String email) {
-    log.info("Updating user by id {}", id);
+    log.info("Atualizando user pelo id {}", id);
     UserModel user = userRepository.findById(id).orElseThrow(() -> {
-      return new RuntimeException(String.format("User=[%s] was not found", id));
+      return new RuntimeException(String.format("User=[%s] não foi encontrado", id));
     });
 
     if (name != null) {
@@ -63,6 +65,12 @@ public class UserService {
 
     userRepository.save(user);
     return user;
+  }
+
+  public Iterable<UserModel> getUsersbyName(String name) {
+     log.info("Recuperando user pelo Nome {}", name);
+     Iterable<UserModel> user = userRepository.findByName(name);
+     return user;   
   }
 
 }
