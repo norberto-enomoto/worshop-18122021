@@ -3,7 +3,7 @@ services:
 
 # Database Service (Mysql)
   db:
-    image: mysql/mysql-server:latest
+    image: mysql:8.0.27
     container_name: database
     ports:
       - "3306:3306"
