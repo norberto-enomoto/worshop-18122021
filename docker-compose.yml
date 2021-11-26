@@ -10,8 +10,7 @@ services:
     restart: always    
     environment:
       MYSQL_DATABASE: db_workshop
-      MYSQL_USER: root
-      MYSQL_PASSWORD: password
+      MYSQL_ROOT_USER: root      
       MYSQL_ROOT_PASSWORD: password
     volumes:
       - db-data:/var/lib/mysql
@@ -20,7 +19,7 @@ services:
 
 # springboot
   springboot:
-    image: enomoto/spring-boot
+    image: enomoto/spring-boot-ms:latest
     ports:
       - "8080:8080"
     restart: always
