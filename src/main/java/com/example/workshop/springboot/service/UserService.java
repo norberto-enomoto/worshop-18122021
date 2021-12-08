@@ -24,6 +24,7 @@ public class UserService {
 
   public Iterable<UserModel> getUsers() {
     log.info("Recuperando todos users");
+    log.info("teste do Github Action");
     return userRepository.findAll();
   }
 
