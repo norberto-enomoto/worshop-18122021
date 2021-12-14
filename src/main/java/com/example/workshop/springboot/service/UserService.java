@@ -30,7 +30,7 @@ public class UserService {
 
   public UserModel getUser(Integer id) {
     log.info("Recuperando user pelo id {}", id);
-    log.info("teste do Github Action");
+  
     return userRepository.findById(id).orElseThrow(() -> {
       return new RuntimeException(String.format("User=[%s] não foi encontrado", id));
     });
@@ -48,6 +48,7 @@ public class UserService {
   public UserModel createUser(String name, String email) {
     UserModel user = UserModel.builder().name(name).email(email).build();
     log.info("Criando {}", user);
+    log.info("teste do Github Action");
     return userRepository.save(user);
   }
 
