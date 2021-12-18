@@ -22,13 +22,11 @@ public class UserService {
 
   public Iterable<UserModel> getUsers() {
     log.info("Recuperando todos users");
-    log.info("teste do Github Action");
     return userRepository.findAll();
   }
 
   public UserModel getUser(Integer id) {
-    log.info("Recuperando user pelo id {}", id);
-  
+    log.info("Recuperando user pelo id {}", id);  
     return userRepository.findById(id).orElseThrow(() -> {
       return new RuntimeException(String.format("User=[%s] não foi encontrado", id));
     });
