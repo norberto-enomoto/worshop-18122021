@@ -1,7 +1,5 @@
 package com.example.workshop.springboot.service;
 
-import java.util.List;
-
 import com.example.workshop.springboot.model.UserModel;
 import com.example.workshop.springboot.repository.UserRepository;
 

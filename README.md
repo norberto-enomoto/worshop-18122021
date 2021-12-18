@@ -3,7 +3,9 @@
 **Pré Requisitos:** -> CI/CD
 
 **1. Instalação e configuração do OpenJDK 11**
-- Windows - Chocolatey: https://community.chocolatey.org/packages/openjdk/11.0
+- Windows - Chocolatey: https://community.chocolatey.org/packages/openjdk11.
+  - Caso não tenha o Chocolatey instalado: https://chocolatey.org/install. Abra um terminal do powershell em modo Adminstrador e execute o seguinte comando: Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+  
   - Configurando o JAVA_HOME no Windows 10: https://javatutorial.net/set-java-home-windows-10
 - Ubuntu 20.4 - https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-20-04-pt
 - MacOS - Brew - https://formulae.brew.sh/formula/openjdk@11
